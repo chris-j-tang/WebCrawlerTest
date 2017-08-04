@@ -1,3 +1,5 @@
 ~/IdeaProjects/WebCrawlerTest/pom.xml
 ~/IdeaProjects/WebCrawlerTest/WebCrawlerTest.iml
 ~/IdeaProjects/WebCrawlerTest/.idea
+*.xml
+*.iml
