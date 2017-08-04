@@ -6,7 +6,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.HashSet;
 
-public class DepthControlledWebCrawler {
+public class DepthControlledWebCrawler{
     // Constructor
     public DepthControlledWebCrawler() {
         links = new HashSet<String>();
