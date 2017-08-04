@@ -43,6 +43,18 @@ public class DepthControlledWebCrawler{
 
 
     public static void main(String[] args) {
-        new DepthControlledWebCrawler().getPageLinks("https://www.nytimes.com/", 0);
+        // NYT thread
+        new Thread() {
+            public void run() {
+                new DepthControlledWebCrawler().getPageLinks("https://www.nytimes.com/", 0);
+            }
+        }.start();
+
+        // Economist thread
+        new Thread() {
+            public void run() {
+                new DepthControlledWebCrawler().getPageLinks("https://www.economist.com/",0);
+            }
+        }.start();
     }
 }
