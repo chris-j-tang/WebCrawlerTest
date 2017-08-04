@@ -28,9 +28,21 @@ public class BasicWebCrawler {
 
                 // Get the HTML from the document
                 Document document = Jsoup.connect(URL).get();
+
+                // Extract links to other URLs
+                Elements linksOnPage = document.select("a[href]");
+
+                // Keep on traversing for each link on the page
+                for (Element page : linksOnPage) {
+                    getPageLinks(page.attr("abs:href"));
+                }
             } catch (IOException e){
                 System.err.println("For '" + URL + "': " + e.getMessage());
             }
         }
+    }
+
+    public static void main(String[] args) {
+        new BasicWebCrawler().getPageLinks("https://www.reddit.com/");
     }
 }
